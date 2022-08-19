@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:id="@+id/rootview"
+	>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/messages"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		/>
+
+	<LinearLayout
+		android:id="@+id/chat"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:padding="4dp"
+		android:background="@color/gray"
+		>
+
+		<ImageButton
+			android:id="@+id/chat_emoji"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:background="?attr/selectableItemBackgroundBorderless"
+			android:padding="12dp"
+			android:scaleType="centerCrop"
+			app:srcCompat="@drawable/ic_emojis"
+			android:layout_gravity="bottom"
+			/>
+
+		<EditText
+			android:id="@+id/chat_edit_text"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:hint="メッセージ"
+			android:imeOptions="actionSend"
+			android:importantForAutofill="no"
+			android:inputType="textCapSentences|textMultiLine"
+			android:maxLines="3"
+			/>
+
+		<ImageButton
+			android:id="@+id/chat_send"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:background="?attr/selectableItemBackgroundBorderless"
+			android:padding="12dp"
+			android:scaleType="centerCrop"
+			app:srcCompat="@drawable/ic_send"
+			android:layout_gravity="bottom"
+			/>
+
+	</LinearLayout>
+</LinearLayout>
