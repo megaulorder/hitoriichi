@@ -2,7 +2,6 @@ package com.megaulorder.hitoriichi.keyboard
 
 import androidx.lifecycle.LifecycleCoroutineScope
 import com.megaulorder.hitoriichi.edittext.EmojiEditTextWidget
-import com.megaulorder.hitoriichi.keyboard.emoji.EmojiKeyboardPopupWidget
 import com.megaulorder.hitoriichi.mvi.Effect
 import com.megaulorder.hitoriichi.mvi.Event
 import com.megaulorder.hitoriichi.mvi.emit

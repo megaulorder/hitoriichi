@@ -1,4 +1,4 @@
-package com.megaulorder.hitoriichi.keyboard.emoji
+package com.megaulorder.hitoriichi.keyboard
 
 import android.app.Activity
 import android.content.Context
@@ -17,7 +17,6 @@ import android.widget.PopupWindow
 import androidx.core.view.ViewCompat
 import com.megaulorder.hitoriichi.R
 import com.megaulorder.hitoriichi.Utils
-import com.megaulorder.hitoriichi.keyboard.EmojiKeyboardLayout
 
 private const val MIN_KEYBOARD_HEIGHT = 50
 private const val APPLY_WINDOW_INSETS_DURATION = 250
@@ -27,8 +26,8 @@ class EmojiKeyboardPopupWidget(
 	private val layout: EmojiKeyboardLayout,
 	private val editText: EditText,
 	internal val activity: Activity,
-	private val rootView: View,
 ) {
+	private val rootView: View = activity.findViewById<View>(android.R.id.content).rootView
 	private val popupWindow: PopupWindow = PopupWindow(activity)
 
 	private var popupWindowHeight: Int = 0
@@ -69,19 +68,20 @@ class EmojiKeyboardPopupWidget(
 				activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
 			inputMethodManager.showSoftInput(editText, InputMethodManager.RESULT_UNCHANGED_SHOWN)
-			showAtLocation()
+//			showAtLocation()
 		}
 	}
 
 	private fun showAtLocation() {
 		isToOpen = false
 
-		editText.postDelayed({
-			popupWindow.showAtLocation(
-				rootView, Gravity.NO_GRAVITY, 0,
-				Utils.getHeight(activity) + popupWindowHeight,
-			)
-		},
+		editText.postDelayed(
+			{
+				popupWindow.showAtLocation(
+					rootView, Gravity.NO_GRAVITY, 0,
+					Utils.getHeight(activity) + popupWindowHeight,
+				)
+			},
 			delay.toLong(),
 		)
 	}

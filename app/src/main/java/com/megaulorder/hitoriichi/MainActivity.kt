@@ -9,7 +9,7 @@ import com.megaulorder.hitoriichi.edittext.EmojiEditTextController
 import com.megaulorder.hitoriichi.edittext.EmojiEditTextWidget
 import com.megaulorder.hitoriichi.keyboard.EmojiKeyboardLayout
 import com.megaulorder.hitoriichi.keyboard.EmojiKeyboardController
-import com.megaulorder.hitoriichi.keyboard.emoji.EmojiKeyboardPopupWidget
+import com.megaulorder.hitoriichi.keyboard.EmojiKeyboardPopupWidget
 import com.megaulorder.hitoriichi.toggle.ToggleButtonController
 import com.megaulorder.hitoriichi.toggle.ToggleButtonWidget
 import com.megaulorder.hitoriichi.messages.MessagesController
@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
 				EmojiKeyboardLayout(this),
 				editText,
 				this,
-				findViewById(R.id.rootview),
 			)
 
 		val emojiKeyboardController =
